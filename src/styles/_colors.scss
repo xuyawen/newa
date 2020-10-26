@@ -1,4 +1,3 @@
-$yuhong: #C04851;
 
 $color-stack:
   (group: RED, id: pale, color: #ffcdd2),
@@ -331,13 +330,3 @@ $color-stack:
   (group: BLUEGREY, id: 800, color: #37474f),
   (group: BLUEGREY, id: 900, color: #263238);
 
-// Color  Function
-@function color($group, $shade:normal, $transparency:1){
-  @each $color in $color-stack{
-    $c-group: map-get($color, group);
-    $c-shade: map-get($color, id);
-    @if($group == map-get($color, group) and $shade == map-get($color, id)){
-      @return rgba(map-get($color, color), $transparency);
-    }
-  }
-}
